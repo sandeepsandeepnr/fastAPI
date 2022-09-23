@@ -1,9 +1,11 @@
+from pydantic import BaseModel
 
-class User(BaseModel):
+class EmployeeModel(BaseModel):
     name: str
     email: str 
     password: str
-    age: int | None = None
+    age: int | None = None  
+    address: str | None = None
 
 class Employee:
 
@@ -14,7 +16,7 @@ class Employee:
     def get_all_employee(self):
         return 'get  all employee details '
 
-    def create_employee(self):
+    def create_employee(self,employee: EmployeeModel):
         return 'create employee details  '
 
     def update_employee(self):
